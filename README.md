@@ -1,8 +1,18 @@
 # NFQfilter
 
-NFQfilter is a Python-based packet filtering project for Linux-based
-network gateways. It uses Netfilter Queue (NFQUEUE) to inspect selected
-network traffic and apply filtering decisions in userspace.
+NFQfilter is a Python-based packet filtering project developed primarily
+for **Ubiquiti UniFi gateways**. It uses Netfilter Queue (NFQUEUE) to
+inspect selected network traffic and apply filtering decisions in userspace.
+
+## Platform and compatibility
+
+- **Target platform:** Ubiquiti UniFi gateways
+- **Tested devices:** UniFi Cloud Gateway Ultra (UCG-Ultra) and UniFi
+  Security Gateway Lite (UXG-Lite)
+- **Base operating system for version 13.x:** Debian 12
+
+The project has only been tested on the devices listed above. Compatibility
+with other UniFi gateways or other Debian-based systems is not confirmed.
 
 ## Project status
 
