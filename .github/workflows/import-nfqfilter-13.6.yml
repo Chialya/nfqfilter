@@ -1,0 +1,42 @@
+name: Import reviewed NFQfilter 13.6 sources
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/import-nfqfilter-13.6.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out target repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Download and extract reviewed archive
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 \
+            "https://raw.githubusercontent.com/Chialya/tempfile/main/nfqfilter_13.6%2Bdata.tgz" \
+            --output /tmp/nfqfilter.tgz
+          tar -tzf /tmp/nfqfilter.tgz
+          tar -xzf /tmp/nfqfilter.tgz -C .
+          test -f nfqfilter_13.6/nfqfilter.py
+          test -f nfqfilter.data/config.py
+      - name: Commit source and data
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nfqfilter_13.6 nfqfilter.data
+          if git diff --cached --quiet; then
+            echo "No changes to import."
+          else
+            git commit -m "Add NFQfilter 13.6 source and data"
+            git push
+          fi
