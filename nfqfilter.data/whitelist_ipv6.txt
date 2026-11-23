@@ -1,0 +1,6 @@
+# Einzelne IPv6
+fd00::1
+
+# Bereich
+fd00::/8
+
