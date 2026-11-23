@@ -18,17 +18,33 @@ im GitHub-Repository.
 ## Versions- und Veröffentlichungsstand
 
 - Aktuelle Entwicklungsbasis: **13.6**
-- Geplante/erste öffentliche Version: **13.6**
+- Vorgesehene erste öffentliche Version: **13.6**
 - Die Versionsnummerierung wird aus der bisherigen Entwicklung übernommen.
-- Frühere interne Entwicklungsschritte werden nicht nachträglich vollständig rekonstruiert.
-- Quellcode und Release-Paket 13.6 sind noch nicht im öffentlichen Repository veröffentlicht.
+- Frühere interne Entwicklungsschritte sind in `tempfile/readme/README_13.x.txt` dokumentiert.
+- **Der Programmquellcode und das Release-Paket 13.6 sind noch nicht im Hauptrepository veröffentlicht.**
 
 ## Repository-Inhalt
 
-- `README.md`: Projektbeschreibung und Plattformhinweise.
+- `README.md`: Ausführliche technische Projektbeschreibung und Funktionsweise von Version 13.6.
 - `LICENSE`: Benutzerdefinierte restriktive Lizenz, Version 1.0.
 - `CHANGELOG.md`: Öffentliche Versionshistorie.
 - `PROJECT_STATUS.md`: Dieser aktuelle Projekt- und Übergabestand.
+
+## Dokumentationsgrundlage
+
+Die ausführliche README wurde anhand des extrahierten 13.6-Quellpakets und der
+Versionsnotizen `README_13.1.txt` bis `README_13.6.txt` erstellt.
+
+Geprüfter Archivinhalt:
+- 17 Python-Dateien im Programmverzeichnis.
+- 7 Dateien im Datenverzeichnis einschließlich Konfiguration, Listen und Logs.
+- Alle 17 Python-Dateien bestehen `python3 -m py_compile *.py`.
+- Im Archiv selbst sind keine Offline-Testdateien enthalten.
+- Die Syntaxprüfung ist kein Live-Test der NFQUEUE- oder Firewall-Funktion.
+
+Die Beispieldaten und die individuelle Laufzeitkonfiguration sind nicht Teil
+des Hauptrepository-Commits. Die README beschreibt die Konfigurationsstruktur,
+ohne persönliche API-Zugangsdaten oder lokale Betriebswerte zu übernehmen.
 
 ## Festgelegte Lizenzabsichten
 
@@ -58,25 +74,25 @@ Der Wortlaut in `LICENSE` ist maßgeblich für den derzeitigen Repository-Stand.
 
 ### Veröffentlichung von Version 13.6
 
-- Das Repository wurde angelegt und ist öffentlich.
-- README, Lizenz und Changelog sind vorhanden.
-- Das Archiv `nfqfilter_13.6+data.tgz` wurde in der ChatGPT-Dateibibliothek
-  gefunden, lässt sich derzeit aber nicht materialisieren oder auslesen.
-- Daher konnte der Quellcode noch nicht geprüft oder hochgeladen werden.
-- Die Ursache des Dateizugriffsfehlers ist ungeklärt; ein Nutzungslimit ist nicht
-  als Ursache bestätigt.
+- Das Archiv `nfqfilter_13.6+data.tgz` aus `Chialya/tempfile` wurde über einen
+  GitHub-Actions-Artefaktlauf extrahiert und lokal geprüft.
+- Die technische Dokumentation in `README.md` wurde erweitert und committed.
+- Der Programmquellcode wurde noch nicht in das Hauptrepository übernommen.
+- Vor der Veröffentlichung ist eine separate Prüfung des Veröffentlichungsumfangs
+  erforderlich: Programmdateien, Beispieldaten, persönliche Konfiguration,
+  Laufzeitdaten und Logs müssen bewusst voneinander getrennt werden.
+- Die Versionsnotizen im Ordner `readme` des temporären Repositories bleiben
+  historische Dokumentationsgrundlage.
 
 ### Nächste Schritte
 
-1. Zugriff auf eine lesbare Kopie des vollständigen Quellcode-Archivs herstellen.
-2. Archivinhalt prüfen und Quellcode von privaten Konfigurationen und Laufzeitdaten
-   trennen.
-3. Veröffentlichungsumfang gemeinsam festlegen.
-4. Installations- und Konfigurationshinweise ergänzen.
-5. Geprüften Quellcode committen und Version 13.6 als GitHub-Release markieren.
+1. Programmdateien und Datenverzeichnis getrennt auf Veröffentlichungsfähigkeit prüfen.
+2. Veröffentlichungsumfang und Umgang mit den vorhandenen Logs/Listen festlegen.
+3. Geprüften Quellcode in das Hauptrepository übernehmen.
+4. Release-Paket, Versionshistorie und GitHub-Release für 13.6 erstellen.
 
 ## Übergabe an einen neuen Chat
 
 Zuerst diese Datei lesen. Danach bei Bedarf die tatsächlichen Dateien im Repository,
-den Git-Commit-Verlauf und die jeweils betroffenen Quellcodedateien prüfen.
+den Git-Commit-Verlauf und die jeweils betroffenen Quelldateien prüfen.
 Diese Statusdatei ersetzt weder den Quellcode noch den Commit-Verlauf.
