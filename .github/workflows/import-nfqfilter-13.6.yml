@@ -1,4 +1,5 @@
 name: Import reviewed NFQfilter 13.6 sources
+# Trigger after workflow creation
 
 on:
   push:
